@@ -41,7 +41,7 @@ Bộ màu sáng dùng teal đậm `#0a7a63` thay vì teal nhạt của bản t�
 
 Tất cả trong `index.html`:
 
-- **Email** — đang là `bestbubuom@gmail.com`, tìm chuỗi này để đổi.
+- **Email** — đang là `doanoidoioi@gmail.com`, tìm chuỗi này để đổi.
 - **Pill ở hero** — vẫn còn dòng "Đang tìm cơ hội Mobile Developer". Nếu không muốn lộ đang tìm việc thì xoá thẻ `<span class="pill">` đó đi cho khớp với mục Liên hệ.
 - **Thời gian các mốc còn lại trong mục Hành trình** — suy ra từ ngày commit của repo. Riêng mốc thực tập đã được xác nhận là 12/2025 – 04/2026 (Công ty Cổ phần HC-Hiteck), các mốc khác vẫn nên kiểm tra lại.
 - **LinkedIn / Facebook** — chưa có link, thêm vào mục Liên hệ.
