@@ -1,0 +1,233 @@
+% =============================================================
+%  CV - Ha Van Doan
+%  BIEN DICH BANG XeLaTeX (khong dung pdfLaTeX - se loi tieng Viet)
+%
+%  Overleaf : Menu > Compiler > XeLaTeX > Recompile
+%  Local    : xelatex cv.tex
+%
+%  Chi tiet xem README.md trong cung thu muc nay.
+% =============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{iftex}
+\ifXeTeX\else\ifLuaTeX\else
+  \GenericError{}{Tai lieu nay phai bien dich bang XeLaTeX hoac LuaLaTeX}{}{}
+\fi\fi
+
+% ---------- fonts ----------
+% TeX Gyre di kem moi ban TeX Live / MiKTeX / Overleaf va co day du dau tieng Viet.
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{texgyreheros}[
+  Extension      = .otf,
+  UprightFont    = *-regular,
+  BoldFont       = *-bold,
+  ItalicFont     = *-italic,
+  BoldItalicFont = *-bolditalic,
+]
+% Muon CV kieu chan (serif) thi doi 'texgyreheros' thanh 'texgyretermes'.
+
+% ---------- layout ----------
+\usepackage[a4paper,top=1.4cm,bottom=1.4cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{0A7A63}
+\definecolor{ink}{HTML}{101826}
+\definecolor{muted}{HTML}{556579}
+\definecolor{rule}{HTML}{D6DAE0}   % xam trung tinh, khong nga xanh
+
+\color{ink}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = accent,
+  pdfborder  = {0 0 0},
+  pdftitle   = {CV - Ha Van Doan},
+  pdfauthor  = {Ha Van Doan},
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{1.06}
+
+% ---------- section heading ----------
+% Duong ke duoi tieu de: mot doan ngan mau accent noi tiep bang mot net toc xam.
+\newcommand{\sectionrule}{%
+  \color{accent}\rule[0.5pt]{1.4cm}{1.6pt}%
+  \color{rule}\rule[1pt]{\dimexpr\linewidth-1.4cm\relax}{0.6pt}%
+}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}
+  {\MakeUppercase}
+  [\vspace{-7pt}{\sectionrule}]
+\titlespacing*{\section}{0pt}{13pt}{8pt}
+
+% ---------- icons (tu dong bo qua neu khong co fontawesome5) ----------
+\IfFileExists{fontawesome5.sty}{%
+  \usepackage{fontawesome5}
+  \newcommand{\icoMail}{\faEnvelope[regular]~}
+  \newcommand{\icoGit}{\faGithub~}
+  \newcommand{\icoPhone}{\faPhone*~}
+  \newcommand{\icoPin}{\faMapMarkerAlt~}
+}{%
+  \newcommand{\icoMail}{}
+  \newcommand{\icoGit}{}
+  \newcommand{\icoPhone}{}
+  \newcommand{\icoPin}{}
+}
+
+% =============================================================
+%  MACRO
+% =============================================================
+
+% \role{chuc danh}{to chuc}{thoi gian}
+\newcommand{\role}[3]{%
+  \vspace{5pt}\par
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1}\ \textcolor{muted}{\textbar}\ #2 & \textcolor{muted}{\small #3}
+  \end{tabularx}\par
+  \vspace{2pt}%
+}
+
+% \project{ten}{nhan}{link github}{cong nghe}
+\newcommand{\project}[4]{%
+  \vspace{6pt}\par
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1}\ \textcolor{muted}{\textbar}\ \textcolor{muted}{\small #2}
+    & \href{#3}{\icoGit\ttfamily\footnotesize source}
+  \end{tabularx}\par
+  {\footnotesize\color{accent}#4\par}%
+  \vspace{2pt}%
+}
+
+% bullet list gon
+\newlist{pts}{itemize}{1}
+\setlist[pts]{
+  leftmargin = 12pt,
+  labelsep   = 5pt,
+  topsep     = 2pt,
+  itemsep    = 1pt,
+  parsep     = 0pt,
+  label      = \textcolor{accent}{\small\textbullet},
+}
+
+% =============================================================
+%  NOI DUNG
+% =============================================================
+\begin{document}
+
+% ---------- HEADER ----------
+{\fontsize{26}{30}\selectfont\bfseries HÀ VĂN ĐOÀN}\\[4pt]
+{\large\color{accent}Flutter / Mobile Developer\ \textcolor{muted}{\textbar}\ AI \& IoT}\\[7pt]
+{\small
+  \icoMail\href{mailto:bestbubuom@gmail.com}{bestbubuom@gmail.com}
+  \quad\textcolor{rule}{\textbar}\quad
+  \icoGit\href{https://github.com/Hdoanf}{github.com/Hdoanf}
+  % --- BO SUNG: bo dau % o dau dong va dien thong tin cua ban ---
+  % \quad\textcolor{rule}{\textbar}\quad \icoPhone 0xxx xxx xxx
+  % \quad\textcolor{rule}{\textbar}\quad \icoPin Hà Nội, Việt Nam
+}
+
+\vspace{5pt}
+{\color{rule}\rule{\linewidth}{0.6pt}}
+
+% ---------- TOM TAT ----------
+\section{Tóm tắt}
+
+Sinh viên CNTT, tập trung vào \textbf{Flutter} và các bài toán mà ứng dụng phải kết nối với
+thế giới bên ngoài: cảm biến, mô hình AI, hoặc kho dữ liệu. Đã hoàn thành 3 ứng dụng di động
+đầy đủ chức năng, trong đó đồ án tốt nghiệp tự làm trọn vòng từ firmware \textbf{ESP32-C3}
+$\to$ \textbf{BLE} $\to$ app Flutter $\to$ \textbf{Firebase} $\to$ \textbf{Gemini AI}.
+Thành thạo dùng \textbf{AI agent} (Claude Code, Gemini CLI, MCP) như một phần quy trình
+code hằng ngày.
+
+% ---------- KY NANG ----------
+\section{Kỹ năng}
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.2cm} X@{}}
+  \textbf{Mobile}          & Flutter, Dart, Riverpod, Provider, go\_router, fl\_chart, flutter\_tts, Responsive UI \\[3pt]
+  \textbf{AI agent}        & Claude Code, Gemini CLI, MCP, prompt engineering, context engineering, AI code review \\[3pt]
+  \textbf{AI / ML}         & Google Gemini, LangChain, FAISS, RAG, ML Kit OCR, pypdf \\[3pt]
+  \textbf{IoT / Embedded}  & ESP32-C3, BLE, cảm biến MAX30102, MJPEG stream, C / C++ \\[3pt]
+  \textbf{Backend}         & Firebase Auth, Cloud Firestore, FastAPI, Python, REST API \\[3pt]
+  \textbf{Web (đồ án)}     & PHP, MySQL, HTML/CSS, JavaScript, PHPMailer, PHPWord \\[3pt]
+  \textbf{Công cụ}         & Git, Neovim / LazyVim, Linux, Nix, Composer, CMake \\
+\end{tabularx}
+
+% ---------- KINH NGHIEM ----------
+\section{Kinh nghiệm}
+
+\role{Thực tập sinh Flutter}{Công ty Cổ phần HC-Hiteck}{12/2025 -- 04/2026}
+\begin{pts}
+  \item Xây dựng ứng dụng quản lý \textbf{Smart Home IoT} đa nền tảng --- một codebase chạy
+        được cả mobile lẫn desktop với layout responsive riêng cho từng kích thước màn hình.
+  \item Tích hợp xem camera an ninh \textbf{MJPEG} realtime, hệ thống cảnh báo cháy và
+        bộ hẹn giờ tự động bật/tắt thiết bị.
+  \item Trực quan hoá dữ liệu sử dụng thiết bị bằng biểu đồ tương tác (FL Chart);
+        quản lý state bằng \textbf{Riverpod}, điều hướng bằng \textbf{go\_router}.
+  \item Tổ chức mã nguồn theo kiến trúc \textit{feature-first} (auth, device, fire\_alert,
+        scheduler, stats\ldots) để dễ mở rộng và bàn giao.
+\end{pts}
+
+% ---------- DU AN ----------
+\section{Dự án nổi bật}
+
+\project{HealthPulse VN}{Đồ án tốt nghiệp}{https://github.com/Hdoanf/doantotnghiep}%
+{Flutter · Firebase · Google Gemini · ML Kit OCR · ESP32-C3 · BLE}
+\begin{pts}
+  \item Ứng dụng quản lý sức khoẻ cá nhân kết hợp \textbf{AI} và \textbf{IoT}.
+  \item Tự viết firmware cho \textbf{ESP32-C3} kèm cảm biến \textbf{MAX30102}, truyền nhịp tim
+        và SpO\textsubscript{2} về app qua \textbf{BLE} theo thời gian thực.
+  \item Chat tư vấn sức khoẻ dựa trên chỉ số người dùng bằng \textbf{Google Gemini};
+        quét phiếu xét nghiệm giấy bằng \textbf{ML Kit OCR}.
+  \item Biểu đồ theo dõi chỉ số sinh tồn và hồ sơ sức khoẻ lưu trên Cloud Firestore.
+\end{pts}
+
+\project{App Học Tiếng Trung}{Sản phẩm cá nhân}{https://github.com/Hdoanf/apphoctiengtrung}%
+{Flutter · Firebase Auth · Firestore · flutter\_tts · Custom Painter}
+\begin{pts}
+  \item Canvas viết tay chữ Hán kèm \textbf{bộ đánh giá nét tự viết} (có unit test riêng)
+        dựa trên dữ liệu thứ tự nét của từng chữ.
+  \item Luyện nghe--nói bằng TTS, bài tập ghép câu, theo dõi tiến độ người học trên Firestore.
+  \item Tự thiết kế design system riêng: bảng màu, typography và widget dùng chung.
+\end{pts}
+
+\project{Chatbot AI Amy --- Kho tài liệu sinh viên}{RAG}{https://github.com/Hdoanf/demo}%
+{Python · FastAPI · LangChain · FAISS · pypdf · boto3}
+\begin{pts}
+  \item Chatbot trả lời câu hỏi dựa trên chính tài liệu người dùng upload, dùng pipeline
+        \textbf{RAG} với LangChain và vector store \textbf{FAISS}.
+  \item Trích xuất nội dung PDF bằng pypdf, lưu file lên S3 qua boto3, backend FastAPI.
+\end{pts}
+
+\project{chimmusicplayer}{Open source}{https://github.com/Hdoanf/chimmusicplayer}%
+{C · TUI · Linux · Makefile · Nix}
+\begin{pts}
+  \item Trình phát nhạc chạy trong terminal viết bằng \textbf{C}, tuỳ biến từ \texttt{kew}.
+  \item Bổ sung tìm kiếm YouTube ngay trong ứng dụng, tự tải MP3 về máy và nhúng ảnh bìa
+        cùng metadata bài hát vào file để nghe offline.
+\end{pts}
+
+\project{Hệ thống quản lý tài sản \& kho}{Đồ án môn học}{https://github.com/Hdoanf/hdoanf.github}%
+{PHP · MySQL · PHPWord · php-barcode-generator}
+\begin{pts}
+  \item Quản lý tài sản, kho và người dùng có phân quyền; sinh mã vạch cho từng tài sản
+        và xuất báo cáo ra file Word.
+\end{pts}
+
+% ---------- HOC VAN ----------
+\section{Học vấn}
+
+\role{Công nghệ thông tin}{Đại học Hòa Bình}{2022 -- 2026}
+\begin{pts}
+  \item GPA: 3.3 / 4.0
+  \item Đồ án tốt nghiệp: \textbf{HealthPulse VN} --- ứng dụng sức khoẻ tích hợp AI và IoT.
+\end{pts}
+
+\end{document}

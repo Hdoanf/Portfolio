@@ -306,6 +306,9 @@ h2{font-size:clamp(1.6rem,4vw,2.15rem);letter-spacing:-.03em;font-weight:800;mar
 .proj-foot a{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--accent)}
 .proj-foot a:hover{text-decoration:underline}
 .proj-foot a svg{width:14px;height:14px}
+.foot-links{margin-left:auto;display:flex;align-items:center;gap:15px}
+.foot-links a{margin-left:0}
+.foot-links .demo{color:var(--accent-2)}
 .stars{display:flex;align-items:center;gap:5px}
 .stars svg{width:13px;height:13px}
 
@@ -453,8 +456,9 @@ footer .right{margin-left:auto}
     <div class="about">
       <div class="rv">   
         <p>
-          Mình là sinh viên CNTT, tập trung vào <strong>Flutter</strong> và những bài toán mà app phải nói chuyện được
-          với thứ gì đó bên ngoài — một con cảm biến, một model AI, hay một kho tài liệu.
+          Mình là sinh viên <strong>Công nghệ thông tin — Đại học Hòa Bình</strong> (2022–2026), tập trung vào
+          <strong>Flutter</strong> và những bài toán mà app phải nói chuyện được với thứ gì đó bên ngoài —
+          một con cảm biến, một model AI, hay một kho tài liệu.
         </p>
         <p>
           Đồ án tốt nghiệp <strong>HealthPulse VN</strong> là ví dụ rõ nhất: mình tự viết firmware cho
@@ -556,7 +560,7 @@ footer .right{margin-left:auto}
     <div class="sec-head rv">
       <div class="kicker">03 — Dự án</div>
       <h2>6 dự án mình đầu tư nhiều nhất</h2>
-      <p>Bấm vào thẻ để mở source trên GitHub. Dùng nút lọc để xem theo lĩnh vực.</p>
+      <p>Bấm vào thẻ để mở source trên GitHub, riêng đồ án tốt nghiệp có bản demo giao diện chạy trực tiếp. Dùng nút lọc để xem theo lĩnh vực.</p>
     </div>
 
     <div class="filters rv" id="filters">
@@ -584,6 +588,7 @@ footer .right{margin-left:auto}
             App quản lý sức khoẻ cá nhân kết hợp AI và IoT. Kết nối BLE tới ESP32-C3 + cảm biến MAX30102 để đo
             nhịp tim và SpO2 realtime, vẽ biểu đồ sinh tồn, chat tư vấn sức khoẻ bằng Gemini AI và quét phiếu
             xét nghiệm giấy bằng ML Kit OCR. Firmware cho thiết bị đo nằm luôn trong repo.
+            Bấm <strong>Demo</strong> để xem thử 8 màn hình giao diện ngay trên trình duyệt.
           </p>
           <div class="tags">
             <span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Gemini AI</span>
@@ -592,9 +597,15 @@ footer .right{margin-left:auto}
           </div>
           <div class="proj-foot">
             <span class="lang"><span class="langdot" style="background:#00B4AB"></span>Dart</span>
-            <a href="https://github.com/Hdoanf/doantotnghiep" target="_blank" rel="noopener">
-              Source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
+            <span class="foot-links">
+              <a class="demo" href="https://hdoanf.github.io/doantotnghiep/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+                Demo
+              </a>
+              <a href="https://github.com/Hdoanf/doantotnghiep" target="_blank" rel="noopener">
+                Source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </span>
           </div>
         </div>
       </article>
@@ -788,8 +799,8 @@ footer .right{margin-left:auto}
         <p>Làm sản phẩm cá nhân từ đầu: thiết kế design system riêng, viết bộ đánh giá nét chữ Hán kèm unit test, tích hợp TTS luyện nghe nói.</p>
       </div>
       <div class="tl-item rv">
-        <div class="when">2026 — đầu năm</div>
-        <h3>Thực tập: Smart Home IoT</h3>
+        <div class="when">12/2025 — 04/2026</div>
+        <h3>Thực tập sinh Flutter — Công ty Cổ phần HC-Hiteck</h3>
         <p>Xây app Flutter đa nền tảng cho hệ thống nhà thông minh — Riverpod, stream camera MJPEG, cảnh báo cháy, hẹn giờ thiết bị.</p>
       </div>
       <div class="tl-item rv">
