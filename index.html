@@ -106,6 +106,7 @@ header.nav.stuck{border-bottom-color:var(--line)}
 .icon-btn:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
 .icon-btn svg{width:17px;height:17px}
 #burger{display:none}
+#lang{width:auto;padding-inline:11px;font-family:'JetBrains Mono',monospace;font-size:.76rem;font-weight:600;letter-spacing:.06em}
 
 @media (max-width:760px){
   .nav-links{
@@ -118,7 +119,7 @@ header.nav.stuck{border-bottom-color:var(--line)}
   }
   .nav-links.open{display:flex}
   .nav-links a{padding:11px 12px;font-size:.98rem}
-  #theme{margin-left:auto}
+  #lang{margin-left:auto}
   #burger{display:grid}
 }
 
@@ -383,12 +384,13 @@ footer .right{margin-left:auto}
   <div class="wrap nav-in">
     <a class="brand" href="#top"><span class="dot"></span>Hà Văn Đoàn</a>
     <nav class="nav-links" id="navlinks">
-      <a href="#about">Giới thiệu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#projects">Dự án</a>
-      <a href="#journey">Hành trình</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="#about" data-i18n="nav.about">Giới thiệu</a>
+      <a href="#skills" data-i18n="nav.skills">Kỹ năng</a>
+      <a href="#projects" data-i18n="nav.projects">Dự án</a>
+      <a href="#journey" data-i18n="nav.journey">Hành trình</a>
+      <a href="#contact" data-i18n="nav.contact">Liên hệ</a>
     </nav>
+    <button class="icon-btn" id="lang" aria-label="Chuyển sang tiếng Anh" title="English">EN</button>
     <button class="icon-btn" id="theme" aria-label="Đổi sáng/tối" title="Đổi sáng/tối">
       <svg id="ico-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
@@ -406,10 +408,10 @@ footer .right{margin-left:auto}
 <div id="top" class="hero">
   <div class="wrap hero-in">
     <div>
-      <span class="pill"><span class="live"></span>Đang tìm cơ hội Mobile Developer</span>
-      <h1>Xin chào, mình là <span class="grad">Hà Văn Đoàn</span></h1>
+      <span class="pill"><span class="live"></span><span data-i18n="hero.pill">Đang tìm cơ hội Mobile Developer</span></span>
+      <h1 data-i18n="hero.h1">Xin chào, mình là <span class="grad">Hà Văn Đoàn</span></h1>
       <p class="role">Flutter Developer <span class="sep">·</span> Mobile <span class="sep">·</span> AI &amp; IoT</p>
-      <p class="lede">
+      <p class="lede" data-i18n="hero.lede">
         Mình xây <strong>ứng dụng di động đa nền tảng</strong> bằng Flutter và kết nối chúng với thế giới thật —
         cảm biến <strong>ESP32 qua BLE</strong>, <strong>Gemini AI</strong>, <strong>Firebase</strong> và các pipeline
         <strong>RAG</strong>. Mình cũng viết được backend cho app của mình khi cần, và một trình phát nhạc TUI bằng C
@@ -418,7 +420,7 @@ footer .right{margin-left:auto}
       <div class="cta">
         <a class="btn btn-primary" href="#projects">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6l2 3h8v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/></svg>
-          Xem dự án
+          <span data-i18n="hero.cta">Xem dự án</span>
         </a>
         <a class="btn btn-ghost" href="https://github.com/Hdoanf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.7 4.6 18.7 5 18.7 5c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
@@ -437,10 +439,10 @@ footer .right{margin-left:auto}
         <div><b>@Hdoanf</b><span>github.com/Hdoanf</span></div>
       </div>
       <div class="gh-grid">
-        <div class="gh-cell"><div class="n" id="s-repos">16</div><div class="l">Repo công khai</div></div>
-        <div class="gh-cell"><div class="n" id="s-langs">9</div><div class="l">Ngôn ngữ</div></div>
-        <div class="gh-cell"><div class="n" id="s-proj">6</div><div class="l">Dự án chính</div></div>
-        <div class="gh-cell"><div class="n" id="s-since">2022</div><div class="l">Code từ năm</div></div>
+        <div class="gh-cell"><div class="n" id="s-repos">16</div><div class="l" data-i18n="gh.repos">Repo công khai</div></div>
+        <div class="gh-cell"><div class="n" id="s-langs">9</div><div class="l" data-i18n="gh.langs">Ngôn ngữ</div></div>
+        <div class="gh-cell"><div class="n" id="s-proj">6</div><div class="l" data-i18n="gh.proj">Dự án chính</div></div>
+        <div class="gh-cell"><div class="n" id="s-since">2022</div><div class="l" data-i18n="gh.since">Code từ năm</div></div>
       </div>
     </aside>
   </div>
@@ -450,29 +452,29 @@ footer .right{margin-left:auto}
 <section id="about">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker">01 — Giới thiệu</div>      
-      <h2>Từ cảm biến đến giao diện, mình làm cả hai đầu</h2>
+      <div class="kicker" data-i18n="about.kicker">01 — Giới thiệu</div>
+      <h2 data-i18n="about.h2">Từ cảm biến đến giao diện, mình làm cả hai đầu</h2>
     </div>
     <div class="about">
-      <div class="rv">   
-        <p>
+      <div class="rv">
+        <p data-i18n="about.p1">
           Mình là sinh viên <strong>Công nghệ thông tin — Đại học Hòa Bình</strong> (2022–2026), tập trung vào
           <strong>Flutter</strong> và những bài toán mà app phải nói chuyện được với thứ gì đó bên ngoài —
           một con cảm biến, một model AI, hay một kho tài liệu.
         </p>
-        <p>
+        <p data-i18n="about.p2">
           Đồ án tốt nghiệp <strong>HealthPulse VN</strong> là ví dụ rõ nhất: mình tự viết firmware cho
           <strong>ESP32-C3 + MAX30102</strong>, đẩy nhịp tim và SpO2 qua <strong>BLE</strong> vào app Flutter,
           rồi cho <strong>Gemini AI</strong> đọc chỉ số để tư vấn, cộng thêm <strong>ML Kit OCR</strong> để quét
           phiếu xét nghiệm giấy.
         </p>
-        <p>
+        <p data-i18n="about.p3">
           Trước đó mình đi thực tập làm hệ thống <strong>Smart Home IoT</strong> đa nền tảng (mobile + desktop,
           stream camera MJPEG realtime). Mình không định hướng theo web, nhưng có làm qua vài đồ án
           <strong>PHP/MySQL</strong> và một backend <strong>FastAPI + LangChain</strong> — đủ để tự dựng API
           cho app của mình khi cần.
         </p>
-        <p>
+        <p data-i18n="about.p4">
           Mình cũng dùng <strong>AI agent</strong> như một phần quy trình làm việc thật — Claude Code và
           Gemini CLI để đọc hiểu codebase lạ, refactor, viết test và review code, kèm cấu hình
           <strong>MCP</strong> riêng cho từng project. Ngoài giờ mình sống trong terminal — Neovim, Nix,
@@ -480,11 +482,11 @@ footer .right{margin-left:auto}
         </p>
       </div>
       <div class="facts rv">
-        <div class="fact"><div class="ico">📱</div><div><b>Flutter là mảng mạnh nhất</b><span>3 app hoàn chỉnh: sức khoẻ, smart home, học tiếng Trung</span></div></div>
-        <div class="fact"><div class="ico">🔌</div><div><b>Làm được cả phần cứng</b><span>ESP32-C3, BLE, MAX30102 — không chỉ dừng ở app</span></div></div>
-        <div class="fact"><div class="ico">🤖</div><div><b>AI ứng dụng thật</b><span>Gemini, OCR, RAG với LangChain + FAISS</span></div></div>
-        <div class="fact"><div class="ico">🤖</div><div><b>Thành thạo AI agent</b><span>Claude Code, Gemini CLI, MCP — dùng agent như một phần quy trình code hằng ngày</span></div></div>
-        <div class="fact"><div class="ico">🐧</div><div><b>Thoải mái với Linux &amp; C</b><span>Neovim/LazyVim, Nix, viết app TUI bằng C</span></div></div>
+        <div class="fact"><div class="ico">📱</div><div data-i18n="fact.flutter"><b>Flutter là mảng mạnh nhất</b><span>3 app hoàn chỉnh: sức khoẻ, smart home, học tiếng Trung</span></div></div>
+        <div class="fact"><div class="ico">🔌</div><div data-i18n="fact.hw"><b>Làm được cả phần cứng</b><span>ESP32-C3, BLE, MAX30102 — không chỉ dừng ở app</span></div></div>
+        <div class="fact"><div class="ico">🤖</div><div data-i18n="fact.ai"><b>AI ứng dụng thật</b><span>Gemini, OCR, RAG với LangChain + FAISS</span></div></div>
+        <div class="fact"><div class="ico">🤖</div><div data-i18n="fact.agent"><b>Thành thạo AI agent</b><span>Claude Code, Gemini CLI, MCP — dùng agent như một phần quy trình code hằng ngày</span></div></div>
+        <div class="fact"><div class="ico">🐧</div><div data-i18n="fact.linux"><b>Thoải mái với Linux &amp; C</b><span>Neovim/LazyVim, Nix, viết app TUI bằng C</span></div></div>
       </div>
     </div>
   </div>
@@ -494,9 +496,9 @@ footer .right{margin-left:auto}
 <section id="skills">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker">02 — Kỹ năng</div>
-      <h2>Công nghệ mình đã dùng để làm ra sản phẩm chạy được</h2>
-      <p>Tất cả những gì bên dưới đều xuất hiện trong ít nhất một dự án ở phần Dự án, không phải danh sách học cho vui.</p>
+      <div class="kicker" data-i18n="skills.kicker">02 — Kỹ năng</div>
+      <h2 data-i18n="skills.h2">Công nghệ mình đã dùng để làm ra sản phẩm chạy được</h2>
+      <p data-i18n="skills.p">Tất cả những gì bên dưới đều xuất hiện trong ít nhất một dự án ở phần Dự án, không phải danh sách học cho vui.</p>
     </div>
     <div class="skills">
       <div class="skill rv">
@@ -530,14 +532,14 @@ footer .right{margin-left:auto}
         </div>
       </div>
       <div class="skill rv">
-        <h3><em>☁️</em> Backend cho app</h3>
+        <h3><em>☁️</em> <span data-i18n="skill.backend">Backend cho app</span></h3>
         <div class="tags">
           <span class="tag">Firebase Auth</span><span class="tag">Firestore</span><span class="tag">FastAPI</span>
           <span class="tag">Python</span><span class="tag">REST API</span>
         </div>
       </div>
       <div class="skill rv">
-        <h3><em>📚</em> Web — mức đồ án</h3>
+        <h3><em>📚</em> <span data-i18n="skill.web">Web — mức đồ án</span></h3>
         <div class="tags">
           <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML/CSS</span>
           <span class="tag">JavaScript</span><span class="tag">PHPMailer</span><span class="tag">PHPWord</span>
@@ -558,13 +560,13 @@ footer .right{margin-left:auto}
 <section id="projects">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker">03 — Dự án</div>
-      <h2>6 dự án mình đầu tư nhiều nhất</h2>
-      <p>Bấm vào thẻ để mở source trên GitHub, riêng đồ án tốt nghiệp có bản demo giao diện chạy trực tiếp. Dùng nút lọc để xem theo lĩnh vực.</p>
+      <div class="kicker" data-i18n="proj.kicker">03 — Dự án</div>
+      <h2 data-i18n="proj.h2">6 dự án mình đầu tư nhiều nhất</h2>
+      <p data-i18n="proj.p">Bấm vào thẻ để mở source trên GitHub, riêng đồ án tốt nghiệp có bản demo giao diện chạy trực tiếp. Dùng nút lọc để xem theo lĩnh vực.</p>
     </div>
 
     <div class="filters rv" id="filters">
-      <button class="chip on" data-f="all">Tất cả</button>
+      <button class="chip on" data-f="all" data-i18n="filter.all">Tất cả</button>
       <button class="chip" data-f="mobile">Mobile</button>
       <button class="chip" data-f="ai">AI</button>
       <button class="chip" data-f="iot">IoT</button>
@@ -581,10 +583,10 @@ footer .right{margin-left:auto}
             <div class="proj-ico">🏥</div>
             <div>
               <h3>HealthPulse VN</h3>
-              <span class="badge flag">Đồ án tốt nghiệp</span>
+              <span class="badge flag" data-i18n="badge.thesis">Đồ án tốt nghiệp</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj1.desc">
             App quản lý sức khoẻ cá nhân kết hợp AI và IoT. Kết nối BLE tới ESP32-C3 + cảm biến MAX30102 để đo
             nhịp tim và SpO2 realtime, vẽ biểu đồ sinh tồn, chat tư vấn sức khoẻ bằng Gemini AI và quét phiếu
             xét nghiệm giấy bằng ML Kit OCR. Firmware cho thiết bị đo nằm luôn trong repo.
@@ -617,10 +619,10 @@ footer .right{margin-left:auto}
             <div class="proj-ico">🏠</div>
             <div>
               <h3>Smart Home IoT Management</h3>
-              <span class="badge">Dự án thực tập</span>
+              <span class="badge" data-i18n="badge.intern">Dự án thực tập</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj2.desc">
             Hệ thống điều khiển nhà thông minh đa nền tảng, một codebase chạy cả mobile lẫn desktop với layout
             responsive riêng. Có xem camera MJPEG realtime, cảnh báo cháy, hẹn giờ tự động cho thiết bị,
             biểu đồ thống kê mức dùng — kiến trúc chia theo feature module.
@@ -645,11 +647,11 @@ footer .right{margin-left:auto}
           <div class="proj-top">
             <div class="proj-ico">🤖</div>
             <div>
-              <h3>Chatbot AI Amy — Kho tài liệu SV</h3>
+              <h3 data-i18n="proj3.title">Chatbot AI Amy — Kho tài liệu SV</h3>
               <span class="badge">RAG</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj3.desc">
             Kho tài liệu sinh viên có chatbot trả lời dựa trên chính tài liệu được upload. Backend FastAPI,
             pipeline RAG với LangChain + FAISS vector store, tách text từ PDF bằng pypdf, lưu file lên S3
             qua boto3, deploy bằng Procfile.
@@ -673,11 +675,11 @@ footer .right{margin-left:auto}
           <div class="proj-top">
             <div class="proj-ico">🀄</div>
             <div>
-              <h3>App Học Tiếng Trung</h3>
-              <span class="badge">Sản phẩm cá nhân</span>
+              <h3 data-i18n="proj4.title">App Học Tiếng Trung</h3>
+              <span class="badge" data-i18n="badge.personal">Sản phẩm cá nhân</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj4.desc">
             App học tiếng Trung với canvas viết tay chữ Hán và bộ đánh giá nét tự viết (có unit test riêng),
             dữ liệu thứ tự nét cho từng chữ, luyện nghe–nói bằng TTS, bài tập ghép câu và theo dõi tiến độ
             người học trên Firestore.
@@ -705,7 +707,7 @@ footer .right{margin-left:auto}
               <span class="badge">Open source</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj5.desc">
             Trình phát nhạc chạy trong terminal (TUI) viết bằng C, tuỳ biến từ <code>kew</code>. Mình thêm
             tìm kiếm YouTube ngay trong app, tự tải MP3 chất lượng cao về <code>~/Music</code>, nhúng ảnh bìa
             và metadata bài hát vào file, sau đó nghe offline bình thường.
@@ -729,11 +731,11 @@ footer .right{margin-left:auto}
           <div class="proj-top">
             <div class="proj-ico">📦</div>
             <div>
-              <h3>Hệ thống quản lý tài sản &amp; kho</h3>
-              <span class="badge">Web nội bộ</span>
+              <h3 data-i18n="proj6.title">Hệ thống quản lý tài sản &amp; kho</h3>
+              <span class="badge" data-i18n="badge.internal">Web nội bộ</span>
             </div>
           </div>
-          <p>
+          <p data-i18n="proj6.desc">
             Web PHP/MySQL quản lý tài sản, kho và người dùng có phân quyền. Sinh mã vạch cho từng tài sản
             (php-barcode-generator), xuất báo cáo ra file Word bằng PHPWord, thêm/xoá loại–nhóm–danh mục
             qua modal, cấu trúc tách rõ <code>pages/</code>, <code>actions/</code>, <code>sql/</code>.
@@ -755,26 +757,26 @@ footer .right{margin-left:auto}
 
     <!-- more repos -->
     <div class="sec-head rv" style="margin:52px 0 0">
-      <div class="kicker">Và một số repo khác</div>
+      <div class="kicker" data-i18n="more.kicker">Và một số repo khác</div>
     </div>
     <div class="more">
       <a class="mini rv" href="https://github.com/Hdoanf/btl" target="_blank" rel="noopener">
-        <span class="ico">🎓</span><span><b>btl</b><span>Quản lý học viên &amp; học phí — gửi thông báo hàng loạt bằng PHPMailer, xuất báo cáo, admin có đăng nhập.</span></span>
+        <span class="ico">🎓</span><span><b>btl</b><span data-i18n="more.btl">Quản lý học viên &amp; học phí — gửi thông báo hàng loạt bằng PHPMailer, xuất báo cáo, admin có đăng nhập.</span></span>
       </a>
       <a class="mini rv" href="https://github.com/Hdoanf/banhang" target="_blank" rel="noopener">
-        <span class="ico">🛒</span><span><b>banhang</b><span>Website bán đồ ăn / bánh kẹo: danh sách sản phẩm, trang chi tiết, giỏ hàng, đăng nhập.</span></span>
+        <span class="ico">🛒</span><span><b>banhang</b><span data-i18n="more.banhang">Website bán đồ ăn / bánh kẹo: danh sách sản phẩm, trang chi tiết, giỏ hàng, đăng nhập.</span></span>
       </a>
       <a class="mini rv" href="https://github.com/Hdoanf/lazyvim" target="_blank" rel="noopener">
-        <span class="ico">⌨️</span><span><b>lazyvim</b><span>Cấu hình Neovim cá nhân viết bằng Lua — môi trường code hằng ngày của mình.</span></span>
+        <span class="ico">⌨️</span><span><b>lazyvim</b><span data-i18n="more.lazyvim">Cấu hình Neovim cá nhân viết bằng Lua — môi trường code hằng ngày của mình.</span></span>
       </a>
       <a class="mini rv" href="https://github.com/Hdoanf/hocnodejs" target="_blank" rel="noopener">
-        <span class="ico">🟩</span><span><b>hocnodejs</b><span>Bài tập Node.js với Handlebars template engine.</span></span>
+        <span class="ico">🟩</span><span><b>hocnodejs</b><span data-i18n="more.node">Bài tập Node.js với Handlebars template engine.</span></span>
       </a>
       <a class="mini rv" href="https://github.com/Hdoanf/sinhnhatHoang" target="_blank" rel="noopener">
-        <span class="ico">🎂</span><span><b>sinhnhatHoang</b><span>Trang web sinh nhật làm tặng bạn — HTML/CSS thuần, nhiều ảnh và hiệu ứng.</span></span>
+        <span class="ico">🎂</span><span><b>sinhnhatHoang</b><span data-i18n="more.bday">Trang web sinh nhật làm tặng bạn — HTML/CSS thuần, nhiều ảnh và hiệu ứng.</span></span>
       </a>
       <a class="mini rv" href="https://github.com/Hdoanf?tab=repositories" target="_blank" rel="noopener">
-        <span class="ico">➕</span><span><b>xem tất cả</b><span>16 repo công khai trên GitHub, gồm cả các bản build keyboard Corne &amp; Sofle.</span></span>
+        <span class="ico">➕</span><span><b data-i18n="more.all.title">xem tất cả</b><span data-i18n="more.all">16 repo công khai trên GitHub, gồm cả các bản build keyboard Corne &amp; Sofle.</span></span>
       </a>
     </div>
   </div>
@@ -784,34 +786,34 @@ footer .right{margin-left:auto}
 <section id="journey">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker">04 — Hành trình</div>
-      <h2>Mình đi từ đâu tới đây</h2>
+      <div class="kicker" data-i18n="tl.kicker">04 — Hành trình</div>
+      <h2 data-i18n="tl.h2">Mình đi từ đâu tới đây</h2>
     </div>
     <div class="tl">
       <div class="tl-item rv">
-        <div class="when">2026 — nay</div>
-        <h3>Đồ án tốt nghiệp: HealthPulse VN</h3>
-        <p>Tự làm trọn vòng từ firmware ESP32-C3 → BLE → app Flutter → Firebase → Gemini AI. Đây là dự án lớn nhất và cũng là thứ mình tự hào nhất.</p>
+        <div class="when" data-i18n="tl1.when">2026 — nay</div>
+        <h3 data-i18n="tl1.title">Đồ án tốt nghiệp: HealthPulse VN</h3>
+        <p data-i18n="tl1.desc">Tự làm trọn vòng từ firmware ESP32-C3 → BLE → app Flutter → Firebase → Gemini AI. Đây là dự án lớn nhất và cũng là thứ mình tự hào nhất.</p>
       </div>
       <div class="tl-item rv">
         <div class="when">2026</div>
-        <h3>App Học Tiếng Trung</h3>
-        <p>Làm sản phẩm cá nhân từ đầu: thiết kế design system riêng, viết bộ đánh giá nét chữ Hán kèm unit test, tích hợp TTS luyện nghe nói.</p>
+        <h3 data-i18n="tl2.title">App Học Tiếng Trung</h3>
+        <p data-i18n="tl2.desc">Làm sản phẩm cá nhân từ đầu: thiết kế design system riêng, viết bộ đánh giá nét chữ Hán kèm unit test, tích hợp TTS luyện nghe nói.</p>
       </div>
       <div class="tl-item rv">
         <div class="when">12/2025 — 04/2026</div>
-        <h3>Thực tập sinh Flutter — Công ty Cổ phần HC-Hiteck</h3>
-        <p>Xây app Flutter đa nền tảng cho hệ thống nhà thông minh — Riverpod, stream camera MJPEG, cảnh báo cháy, hẹn giờ thiết bị.</p>
+        <h3 data-i18n="tl3.title">Thực tập sinh Flutter — Công ty Cổ phần HC-Hiteck</h3>
+        <p data-i18n="tl3.desc">Xây app Flutter đa nền tảng cho hệ thống nhà thông minh — Riverpod, stream camera MJPEG, cảnh báo cháy, hẹn giờ thiết bị.</p>
       </div>
       <div class="tl-item rv">
         <div class="when">2025 — 2026</div>
-        <h3>Mở rộng sang AI &amp; Linux</h3>
-        <p>Làm chatbot RAG với FastAPI + LangChain + FAISS. Song song đó chuyển hẳn sang Neovim/Nix và tự thêm tính năng cho một music player TUI viết bằng C.</p>
+        <h3 data-i18n="tl4.title">Mở rộng sang AI &amp; Linux</h3>
+        <p data-i18n="tl4.desc">Làm chatbot RAG với FastAPI + LangChain + FAISS. Song song đó chuyển hẳn sang Neovim/Nix và tự thêm tính năng cho một music player TUI viết bằng C.</p>
       </div>
       <div class="tl-item rv">
         <div class="when">2022 — 2025</div>
-        <h3>Những năm đầu: đồ án PHP/MySQL</h3>
-        <p>Bắt đầu code từ 2022. Các đồ án môn học đầu tiên đều là web PHP: quản lý tài sản có mã vạch và xuất Word, quản lý học viên–học phí có gửi mail hàng loạt, website bán hàng có giỏ hàng. Đây là nơi mình học cách nghĩ về dữ liệu và CRUD trước khi chuyển sang mobile.</p>
+        <h3 data-i18n="tl5.title">Những năm đầu: đồ án PHP/MySQL</h3>
+        <p data-i18n="tl5.desc">Bắt đầu code từ 2022. Các đồ án môn học đầu tiên đều là web PHP: quản lý tài sản có mã vạch và xuất Word, quản lý học viên–học phí có gửi mail hàng loạt, website bán hàng có giỏ hàng. Đây là nơi mình học cách nghĩ về dữ liệu và CRUD trước khi chuyển sang mobile.</p>
       </div>
     </div>
   </div>
@@ -821,8 +823,8 @@ footer .right{margin-left:auto}
 <section id="contact">
   <div class="wrap">
     <div class="contact-card rv">
-      <div class="kicker">05 — Liên hệ</div>
-      <h2>Kết nối với mình</h2>
+      <div class="kicker" data-i18n="contact.kicker">05 — Liên hệ</div>
+      <h2 data-i18n="contact.h2">Kết nối với mình</h2>
       <div class="links">
         <a class="btn btn-primary" href="mailto:doanoidoioi@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
@@ -863,6 +865,134 @@ footer .right{margin-left:auto}
     try { localStorage.setItem('theme', next); } catch(e){}
     paintIcon();
   });
+
+  /* ---------- language (vi is written in the HTML, en lives here) ---------- */
+  var EN = {
+    'nav.about':'About',
+    'nav.skills':'Skills',
+    'nav.projects':'Projects',
+    'nav.journey':'Journey',
+    'nav.contact':'Contact',
+
+    'hero.pill':'Open to Mobile Developer roles',
+    'hero.h1':'Hi, I’m <span class="grad">Ha Van Doan</span>',
+    'hero.lede':'I build <strong>cross-platform mobile apps</strong> with Flutter and wire them into the real world — <strong>ESP32 sensors over BLE</strong>, <strong>Gemini AI</strong>, <strong>Firebase</strong> and <strong>RAG</strong> pipelines. I write the backend my apps need, and a TUI music player in C for fun.',
+    'hero.cta':'View projects',
+    'gh.repos':'Public repos',
+    'gh.langs':'Languages',
+    'gh.proj':'Featured projects',
+    'gh.since':'Coding since',
+
+    'about.kicker':'01 — About',
+    'about.h2':'From sensor to screen, I build both ends',
+    'about.p1':'I study <strong>Information Technology at Hoa Binh University</strong> (2022–2026), focused on <strong>Flutter</strong> and on problems where the app has to talk to something outside itself — a sensor, an AI model, or a pile of documents.',
+    'about.p2':'My graduation project <strong>HealthPulse VN</strong> shows it best: I wrote the firmware for an <strong>ESP32-C3 + MAX30102</strong>, streamed heart rate and SpO2 over <strong>BLE</strong> into a Flutter app, let <strong>Gemini AI</strong> read those numbers and advise on them, and added <strong>ML Kit OCR</strong> to scan paper lab results.',
+    'about.p3':'Before that I interned on a cross-platform <strong>Smart Home IoT</strong> system (mobile + desktop, real-time MJPEG camera streaming). Web is not where I am heading, but I have shipped a few <strong>PHP/MySQL</strong> coursework projects and a <strong>FastAPI + LangChain</strong> backend — enough to stand up an API for my own app when I need one.',
+    'about.p4':'I also use <strong>AI agents</strong> as part of a real workflow — Claude Code and Gemini CLI to read unfamiliar codebases, refactor, write tests and review code, with a per-project <strong>MCP</strong> setup. Off hours I live in the terminal: Neovim, Nix, and a TUI music player in C that I taught to download songs from YouTube.',
+
+    'fact.flutter':'<b>Flutter is my strongest area</b><span>3 complete apps: health, smart home, Chinese learning</span>',
+    'fact.hw':'<b>I handle the hardware too</b><span>ESP32-C3, BLE, MAX30102 — not just the app side</span>',
+    'fact.ai':'<b>AI that actually ships</b><span>Gemini, OCR, RAG with LangChain + FAISS</span>',
+    'fact.agent':'<b>Fluent with AI agents</b><span>Claude Code, Gemini CLI, MCP — agents as part of daily coding</span>',
+    'fact.linux':'<b>At home on Linux &amp; C</b><span>Neovim/LazyVim, Nix, a TUI app written in C</span>',
+
+    'skills.kicker':'02 — Skills',
+    'skills.h2':'The stack behind things I have actually shipped',
+    'skills.p':'Everything below appears in at least one project in the Projects section — this is not a wishlist.',
+    'skill.backend':'Backend for my apps',
+    'skill.web':'Web — coursework level',
+
+    'proj.kicker':'03 — Projects',
+    'proj.h2':'The 6 projects I put the most into',
+    'proj.p':'Open a card for the source on GitHub; the graduation project also has a live interface demo. Use the filters to browse by field.',
+    'filter.all':'All',
+    'badge.thesis':'Graduation project',
+    'badge.intern':'Internship project',
+    'badge.personal':'Personal product',
+    'badge.internal':'Internal web app',
+
+    'proj1.desc':'Personal health app combining AI and IoT. It connects over BLE to an ESP32-C3 with a MAX30102 sensor for real-time heart rate and SpO2, charts vital signs, gives health advice through Gemini AI, and scans paper lab results with ML Kit OCR. The device firmware lives in the same repo. Hit <strong>Demo</strong> to walk through all 8 screens in your browser.',
+    'proj2.desc':'Cross-platform smart home control: one codebase for mobile and desktop, each with its own responsive layout. Real-time MJPEG camera view, fire alarms, device schedules and usage charts — organised as feature modules.',
+    'proj3.title':'Chatbot AI Amy — Student document hub',
+    'proj3.desc':'A student document library whose chatbot answers from the uploaded documents themselves. FastAPI backend, RAG pipeline with LangChain + FAISS vector store, PDF text extraction with pypdf, files on S3 through boto3, deployed with a Procfile.',
+    'proj4.title':'Chinese Learning App',
+    'proj4.desc':'A Chinese learning app with a handwriting canvas for Han characters and a stroke grader I wrote myself (with its own unit tests), stroke-order data per character, listening and speaking practice via TTS, sentence-building exercises, and learner progress on Firestore.',
+    'proj5.desc':'A terminal music player (TUI) written in C, customised from <code>kew</code>. I added YouTube search inside the app, high-quality MP3 downloads into <code>~/Music</code>, cover art and metadata embedded into each file, then normal offline playback.',
+    'proj6.title':'Asset &amp; warehouse management system',
+    'proj6.desc':'A PHP/MySQL web app for assets, warehouse and users with role-based access. It generates a barcode per asset (php-barcode-generator), exports Word reports with PHPWord, manages types–groups–categories through modals, and keeps <code>pages/</code>, <code>actions/</code> and <code>sql/</code> clearly separated.',
+
+    'more.kicker':'And a few other repos',
+    'more.btl':'Student &amp; tuition management — bulk notices with PHPMailer, report export, admin login.',
+    'more.banhang':'Food and confectionery shop site: product list, detail pages, cart, login.',
+    'more.lazyvim':'My personal Neovim config in Lua — the environment I code in every day.',
+    'more.node':'Node.js exercises with the Handlebars template engine.',
+    'more.bday':'A birthday site made for a friend — plain HTML/CSS, lots of photos and effects.',
+    'more.all.title':'see everything',
+    'more.all':'16 public repos on GitHub, including Corne &amp; Sofle keyboard builds.',
+
+    'tl.kicker':'04 — Journey',
+    'tl.h2':'How I got here',
+    'tl1.when':'2026 — now',
+    'tl1.title':'Graduation project: HealthPulse VN',
+    'tl1.desc':'The whole loop on my own: ESP32-C3 firmware → BLE → Flutter app → Firebase → Gemini AI. My biggest project, and the one I am proudest of.',
+    'tl2.title':'Chinese Learning App',
+    'tl2.desc':'A personal product from scratch: my own design system, a Han stroke grader with unit tests, TTS for listening and speaking practice.',
+    'tl3.title':'Flutter Intern — HC-Hiteck JSC',
+    'tl3.desc':'Built the cross-platform Flutter app for a smart home system — Riverpod, MJPEG camera streaming, fire alarms, device scheduling.',
+    'tl4.title':'Branching into AI &amp; Linux',
+    'tl4.desc':'Built a RAG chatbot with FastAPI + LangChain + FAISS. Alongside it, moved fully to Neovim/Nix and added features to a TUI music player written in C.',
+    'tl5.title':'The early years: PHP/MySQL coursework',
+    'tl5.desc':'I started coding in 2022. The first coursework projects were all PHP web apps: asset management with barcodes and Word export, student–tuition management with bulk mail, a shop site with a cart. That is where I learned to think about data and CRUD before moving to mobile.',
+
+    'contact.kicker':'05 — Contact',
+    'contact.h2':'Get in touch'
+  };
+
+  var i18nNodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+  var VI = {};
+  i18nNodes.forEach(function(el){ VI[el.getAttribute('data-i18n')] = el.innerHTML; });
+
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var META = {
+    vi: {
+      title: document.title,
+      desc: metaDesc ? metaDesc.getAttribute('content') : '',
+      theme: 'Đổi sáng/tối', toLang: 'EN', toLangLabel: 'Switch to English', toLangTitle: 'English'
+    },
+    en: {
+      title: 'Ha Van Doan — Flutter / Mobile Developer',
+      desc: 'Portfolio of Ha Van Doan (Hdoanf) — Flutter, Firebase, AI & IoT. Graduation project HealthPulse VN, Smart Home IoT, Chatbot AI Amy.',
+      theme: 'Toggle theme', toLang: 'VI', toLangLabel: 'Chuyển sang tiếng Việt', toLangTitle: 'Tiếng Việt'
+    }
+  };
+
+  var langBtn = document.getElementById('lang');
+  var themeBtn = document.getElementById('theme');
+  var lang = 'vi';
+
+  function setLang(next){
+    lang = next;
+    i18nNodes.forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      var val = next === 'en' ? EN[key] : VI[key];
+      if (val != null) el.innerHTML = val;
+    });
+    root.setAttribute('lang', next);
+    document.title = META[next].title;
+    if (metaDesc) metaDesc.setAttribute('content', META[next].desc);
+    themeBtn.setAttribute('aria-label', META[next].theme);
+    themeBtn.setAttribute('title', META[next].theme);
+    langBtn.textContent = META[next].toLang;
+    langBtn.setAttribute('aria-label', META[next].toLangLabel);
+    langBtn.setAttribute('title', META[next].toLangTitle);
+    try { localStorage.setItem('lang', next); } catch(e){}
+  }
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('lang'); } catch(e){}
+  if (savedLang === 'en') setLang('en');
+
+  langBtn.addEventListener('click', function(){ setLang(lang === 'en' ? 'vi' : 'en'); });
 
   /* ---------- mobile menu ---------- */
   var burger = document.getElementById('burger');

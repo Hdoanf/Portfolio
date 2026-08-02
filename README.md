@@ -29,6 +29,20 @@ Mục Kỹ năng có một card riêng cho **AI Agent & Agentic coding** (Claude
 
 Mục Liên hệ chỉ còn tiêu đề + hai nút, không có câu xin việc.
 
+## Song ngữ Việt / Anh
+
+Nút `EN` / `VI` cạnh nút đổi theme chuyển toàn bộ nội dung, nhớ lựa chọn trong `localStorage` và đổi luôn `<html lang>`, `<title>`, `meta description`.
+
+Cách hoạt động: **tiếng Việt là bản gốc nằm thẳng trong HTML**, mỗi đoạn cần dịch mang một thuộc tính `data-i18n="khoá"`. Bản tiếng Anh nằm trong object `EN` ở đoạn script cuối file. Khi tải trang, JS chụp lại toàn bộ tiếng Việt vào biến `VI`, nên bấm qua lại không mất chữ.
+
+Muốn sửa nội dung:
+
+- **Sửa tiếng Việt** — sửa thẳng trong HTML như bình thường.
+- **Sửa tiếng Anh** — tìm khoá tương ứng trong object `EN`.
+- **Thêm đoạn mới cần dịch** — thêm `data-i18n="khoá-mới"` vào thẻ, rồi thêm `'khoá-mới':'...'` vào `EN`. Thiếu khoá thì đoạn đó chỉ đơn giản là giữ nguyên tiếng Việt, không vỡ trang.
+
+Các tag công nghệ (`Flutter`, `Firebase`, `ESP32-C3`…) và tên repo cố ý không dịch.
+
 ## Theme
 
 Mặc định là **sáng**. Nút mặt trăng góc phải đổi sang tối và ghi nhớ lựa chọn trong `localStorage`.
